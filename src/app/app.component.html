@@ -1,0 +1,67 @@
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <ng-container  matColumnDef="image">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Image</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">
+      <img class="image-size" [src]="element.images[0]" />
+    </td>
+  </ng-container>
+
+  <ng-container  matColumnDef="brand">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Brand</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">{{ element.brand }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Category</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">{{ element.category }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="discountPercentage">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>discountPercentage</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">{{ element.discountPercentage }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Price</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">{{ element.price }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="rating">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Rating</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">{{ element.rating }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="stock">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Stock</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">
+      {{ element.stock }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Title</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="satış adeti">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>satış adeti</th>
+    <td
+      mat-cell
+      class="mat-column"
+      matTooltip="{{ element.description }}"
+      *matCellDef="let element"
+    >
+      {{ element.soldedproduct }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="düzenle">
+    <th mat-header-cell class="mat-column" *matHeaderCellDef>Satış adetini düzenle</th>
+    <td mat-cell class="mat-column" *matCellDef="let element">
+      <button type="button" class="btn btn-success " (click)="openDialog(element)">
+        Satış adetini düzenle
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

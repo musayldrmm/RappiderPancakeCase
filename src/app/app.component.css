@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+  }
+
+.image-size{
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+  }
+
+  .mat-column {
+    width: 32px;
+    border-right: 1px solid black;
+    padding-right: 24px;
+    text-align: center;
+
+  }
+
+th{
+  background-color: #54585d !important;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  border: 1px solid #54585d;
+}
+td{
+  color: #636363 !important;
+  border: 1px solid #dddfe1;
+}
